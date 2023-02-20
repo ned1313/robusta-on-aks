@@ -4,7 +4,7 @@ provider "azurerm" {
 
 locals {
   name               = "${var.naming_prefix}-aks"
-  agents_count       = 2
+  agents_count       = [2,2]
   agents_size        = "Standard_D2s_v3"
   base_address_space = "10.42.0.0/16" # Don't use 10.0.0.0/16 as the module uses it for K8s
 }
@@ -37,7 +37,7 @@ module "clusters" {
 
   prefix                            = "${var.naming_prefix}${count.index}"
   resource_group_name               = azurerm_resource_group.main.name
-  agents_count                      = local.agents_count
+  agents_count                      = local.agents_count[count.index]
   agents_size                       = local.agents_size
   vnet_subnet_id                    = azurerm_subnet.main[count.index].id
   sku_tier                          = "Paid"

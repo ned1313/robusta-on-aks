@@ -29,3 +29,4 @@ override.tf.json
 # example: *tfplan*
 terraform.tfvars
 values.yaml
+**/acme_fitness_demo/*
