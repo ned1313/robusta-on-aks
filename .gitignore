@@ -30,3 +30,4 @@ override.tf.json
 terraform.tfvars
 values.yaml
 **/acme_fitness_demo/*
+**/acme_fitness_demo
