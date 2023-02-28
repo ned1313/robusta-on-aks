@@ -4,7 +4,7 @@ provider "azurerm" {
 
 locals {
   name               = "${var.naming_prefix}-aks"
-  agents_count       = [2,2]
+  agents_count       = [1,1]
   agents_size        = "Standard_D2s_v3"
   base_address_space = "10.42.0.0/16" # Don't use 10.0.0.0/16 as the module uses it for K8s
 }

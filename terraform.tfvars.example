@@ -1,0 +1,2 @@
+helm_values_path = "values.yaml"
+cluster_count    = 2
